@@ -1,0 +1,21 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev" : "npx nodemon src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "KiwiWiki Org",
+  "license": "ISC",
+  "dependencies": {
+    "@feathersjs/express": "^4.5.15",
+    "@feathersjs/feathers": "^4.5.15",
+    "feathers-knex": "^8.0.1",
+    "feathers-memory": "^4.1.0",
+    "knex": "^2.3.0",
+    "nodemon": "^2.0.20",
+    "sqlite3": "^5.1.2"
+  }
+}
