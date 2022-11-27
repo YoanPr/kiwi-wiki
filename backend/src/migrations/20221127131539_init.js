@@ -4,8 +4,9 @@
  */
 exports.up = function(knex) {
     return knex.schema
-    .createTable('page', table => {
-       table.string('url').primary()
+    .createTable('articles', table => {
+       table.increments('id').primary()
+       table.string('url').notNullable().unique()
        table.text('texte')
     })
 };
@@ -16,5 +17,5 @@ exports.up = function(knex) {
  */
 exports.down = function(knex) {
     return knex.schema
-      .dropTable('page')
+      .dropTable('articles')
 };

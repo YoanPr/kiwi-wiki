@@ -8,9 +8,13 @@ const database = knex(dbConfig.development)
 
 const app = express(feathers())
 
-app.get('', function (request, response) {
-    response.send("kiwiiiii... WIKIII!");
-  })
+// JSON body parser middleware
+app.use(express.json())
+// Set up REST transport
+app.configure(express.rest())
+
+// Feathers/Knex REST services
+app.use('/api/articles', knexService({ Model: database, name: 'articles' }))
 
 app.listen(3000, function () {
     console.log("Server listening on port 3000")
