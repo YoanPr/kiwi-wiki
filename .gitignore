@@ -1,5 +1,6 @@
 # Logs
 logs
+*.sqlite3
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -25,3 +26,4 @@ dist-ssr
 *.sw?
 
 .sqlite
+backend/dev.sqlite3
