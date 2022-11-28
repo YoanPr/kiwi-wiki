@@ -3,7 +3,7 @@ const express = require('@feathersjs/express')
 const knex = require('knex')
 const knexService = require('feathers-knex')
 
-const dbConfig = require('./knexfile.js')
+const dbConfig = require('../knexfile.js')
 const database = knex(dbConfig.development)
 
 const app = express(feathers())
