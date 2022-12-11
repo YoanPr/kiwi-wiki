@@ -1,4 +1,5 @@
 <template>
+  <NavBar />
 
 <div class="container max-w-2xl mx-auto bg-blue-500">
 <h3>Créer articles</h3>
@@ -21,11 +22,13 @@
 </ul>
 
 </div>
-
+    <Footer />
 </template>
 <!-- <script src='./useArticles.js' /> -->
 
-<script setup>
+<script setup>    
+    import NavBar from './components/NavBar.vue'
+    import Footer from './components/Footer.vue'
     import useArticles from './useArticles.js'
     const creationArticle = useArticles['methods']['creationArticle']
     const getArticles = useArticles['methods']['getArticles']
