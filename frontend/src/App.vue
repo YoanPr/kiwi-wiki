@@ -1,33 +1,15 @@
-<script>
-export default {
-  data() {
-    return {
-      name: 'Vue.js'
-    }
-  },
-  methods: {
-    async getToutLesArticles(){
-      let response = await fetch('http://localhost:3000/api/articles')
-      let articles = await response.json()
-      return articles
-    },
-    async getArticleFromUrl(url) {
-      let response = await fetch('http://localhost:3000/api/articles?url=' + url)
-      let article = await response.json()
-      return article[0]
-     },
-    async getArticlesFromTitre(titre) {
-        let response = await fetch('http://localhost:3000/api/articles?titre[$like]=%' + titre + '%')
-        let articles = await response.json()
-        return articles
-     }
-   }
-}
-</script>
-
 <template>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+
+<h3>Créer articles</h3>
+<input class="mb-3" id="urlArticle" type="text" placeholder="URL article"><br>
+<input class="mb-3" id="titreArticle" type="text" placeholder="Titre article"><br>
+<input class="mb-3" id="textArticle" type="text" placeholder="Texte article"><br>
+<button class="mb-4" id="boutonAjout" type="button" v-on:click="creationArticle()">Ajouter</button>
+<hr>
+
+<h2 class="my-2">Liste des articles</h2>
+<ul id="list"></ul>
 
 </template>
+<script src='./useArticles.js'></script>
+

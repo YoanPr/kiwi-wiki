@@ -1,4 +1,5 @@
 const feathers = require('@feathersjs/feathers')
+const socketio = require('@feathersjs/socketio')
 const express = require('@feathersjs/express')
 const knex = require('knex')
 const knexService = require('feathers-knex')
@@ -8,18 +9,24 @@ const database = knex(dbConfig.development)
 
 const app = express(feathers())
 
-// On ajoute Cors pour permettre au front de faire des requetes
-const cors = require('cors')
-app.use(cors())
-
-// JSON body parser middleware
+// Turn on JSON parser for REST services
 app.use(express.json())
-// Set up REST transport
-app.configure(express.rest())
 
-// Feathers/Knex REST services, met en place le service pour la table articles
-app.use('/api/articles', knexService({ Model: database, name: 'articles' }))
+// Configure the Socket.io transport
+app.configure(socketio({
+  path: '/articles-socket-io',
+}))
 
-app.listen(3000, function () {
-    console.log("Server listening on port 3000")
+// Create a channel that will handle the transportation of all realtime events
+app.on('connection', connection => app.channel('everybody').join(connection))
+
+// Publish all realtime events to the `everybody` channel
+app.publish(() => app.channel('everybody'))
+
+// Feathers/Knex REST services
+app.use('articles', knexService({ Model: database, name: 'articles' }))
+
+
+app.listen(3030, function () {
+    console.log("Server listening on port 3030")
 })
