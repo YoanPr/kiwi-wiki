@@ -4,27 +4,18 @@ import { reactive, computed } from 'vue'
 
 
 const data = reactive({
-  articles : {}
+  articles : []
 })
 
+let compteur = 0 // Logs
+
 const getArticles = computed(() => {
-  app.service('articles').find({}).then(articlesList =>
-  {
-      articlesList.forEach(article => 
-      { 
-          data.articles[article['id']] = article  
-      })
-  })
+  compteur++; console.log("compteur=", compteur) // Logs
   return Object.values(data.articles)
 })
 
 function addArticleElement(article) {
-    //const articleElement = document.createElement('li')
-    //articleElement.innerText = article.titre
-    //document.body.appendChild(articleElement)
-    data[article['id']] = article
-    console.log(data)
-
+    data.articles.push(article)
 }
  
  // get & display already existing users
@@ -35,7 +26,7 @@ function addArticleElement(article) {
  // Listen to new articles being created
 app.service('articles').on('created', article => {
   console.log('CREATED', article)
-  //addArticleElement(article)
+  addArticleElement(article)
 })
 
 // Creation de nouveau article
