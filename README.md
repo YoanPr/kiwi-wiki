@@ -5,3 +5,8 @@ cd backend
 npm install
 npx knex migrate:latest
 npm run dev
+
+Instalation du frontend
+cd frontend
+npm install
+npm run dev
