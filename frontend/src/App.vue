@@ -16,7 +16,7 @@
             <div class="max-w-2xl  bg-yellow-600 " v-for="article in getArticles">                
                 <h1 class="font-bold border-b">{{ article.titre  }}</h1>
                 <p class="my-10">{{ article.texte }} </p>
-                <button class="bg-blue-300 hover:bg-blue-400 rounded-full"><a href="../">Ouvrir</a></button>
+                <button class="bg-blue-300 hover:bg-blue-400 rounded-full"><a :href="`${article.titre}`">Ouvrir</a></button>
             </div>
         </div>
 </ul>
