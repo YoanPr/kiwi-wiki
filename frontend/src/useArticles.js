@@ -17,6 +17,38 @@ const getArticles = computed(() => {
 function addArticleElement(article) {
     data.articles.push(article)
 }
+
+async function rechercheArticles(){
+  const chaine_recherche = document.getElementById("input_recherche").value
+  let element_dataliste = ''
+  app.service('articles').find({
+    query: {
+      titre: {
+        $like: '%' + chaine_recherche + '%'
+      }
+    }
+  }).then(listeArticles => {
+      listeArticles.forEach(article => 
+        element_dataliste += '<option value="'+article.titre+'">'+ article.titre +'<option/>'
+      )
+    document.getElementById("datalist-articles").innerHTML = element_dataliste
+  })
+}
+
+async function getURLFromTitre(titre){
+ return app.service('articles').find({
+    query: {
+      titre: titre,
+    }
+  }).then(listeArticles => {
+    if (listeArticles.lenght > 0) { 
+      return listeArticles[0].url
+    } 
+    else {
+      return titre
+    } 
+  })
+}
  
  // get & display already existing users
  app.service('articles').find({}).then(articlesList => {
@@ -53,6 +85,6 @@ function creationArticle(){
     },
   
     methods: {
-      creationArticle, getArticles
+      creationArticle, getArticles, rechercheArticles, getURLFromTitre
     }
   }
