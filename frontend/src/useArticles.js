@@ -90,10 +90,23 @@ function creationArticle(){
   window.location.reload()
 }
 
+// Creation de nouveau article
+async function modificationArticle(){
+  idArticle = await getArticleFromURL(window.location.pathname).id
+  const titreInput = document.getElementById('titreArticle')
+  const textArticle = document.getElementById("md-editor-v3-textarea")
+
+  app.service('articles').patch(idArticle, {
+    titre: titreInput.value,
+    texte: textArticle.value,
+  })
+  window.location.reload()
+}
+
  export default {
   
     methods: {
       creationArticle, getArticles, rechercheArticles, getURLFromTitre,
-      getArticleFromURL
+      getArticleFromURL, modificationArticle
     }
   }
