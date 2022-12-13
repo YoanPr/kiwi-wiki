@@ -6,7 +6,7 @@ const getURLFromTitre = useArticles['methods']['getURLFromTitre']
 async function redirection_articles(){
     const titre = document.getElementById("input_recherche").value
     await getURLFromTitre(titre).then(url => {
-        window.location.href = window.location.protocol + '/' + url;
+        window.location.href = window.location.protocol + url;
         }
     )
 }
