@@ -17,7 +17,7 @@ defineProps({
 
 </script>
 <template>
- <nav class="flex items-center justify-between flex-wrap bg-white py-4 lg:px-12 shadow border-solid border-t-2 border-blue-700">
+ <nav class="flex items-center justify-between flex-wrap bg-lime-300 py-4 lg:px-12 shadow border-solid border-t-2 border-blue-700">
         <div class="flex justify-between lg:w-auto w-full lg:border-b-0 pl-6 pr-2 border-solid border-b-2 border-gray-300 pb-5 lg:pb-0">
             <div class="flex items-center flex-shrink-0 text-gray-800 mr-16">
                 <img src ="../../public/kiwi.png" class="h-16 self-center">
@@ -25,7 +25,7 @@ defineProps({
             <div class="block lg:hidden ">
                 <button
                     id="nav"
-                    class="flex items-center px-3 py-2 border-2 rounded text-blue-700 border-blue-700 hover:text-blue-700 hover:border-blue-700">
+                    class="flex items-center px-3 py-2 border-2 rounded text-blue-700 border-lime-300 hover:text-blue-700 hover:border-blue-700">
                     <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title>
                         <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
                     </svg>
@@ -34,28 +34,28 @@ defineProps({
         </div>
     
         <div class="menu w-full lg:block flex-grow lg:flex lg:items-center lg:w-auto lg:px-3 px-8">
-            <div class="text-md font-bold text-blue-700 lg:flex-grow">
+            <div class="text-md font-bold text-yellow-700 lg:flex-grow">
                 <a href="../../index.html"
-                   class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-700 mr-2">
+                   class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-yellow-700 mr-2">
                     Accueil
                 </a>
                 <a href="../../creation.html"
-                   class=" block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-700 mr-2">
+                   class=" block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-yellow-700 mr-2">
                     Créer
                 </a>
                 <a href="#"
-                   class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-700 mr-2">
+                   class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-yellow-700 mr-2">
                     Modifier
                 </a>
                 <a href="#responsive-header"
-                   class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-700 mr-2">
+                   class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-yellow-700 mr-2">
                     Supprimer
                 </a>
             </div>
             <!-- Barre de recherche -->
-            <div class="relative mx-auto text-gray-600 lg:block hidden">
+            <div class="relative mx-auto text-yellow-700 lg:block hidden">
                 <input
-                    class="border-2 border-gray-300 bg-white h-10 pl-2 pr-8 rounded-lg text-sm focus:outline-none"
+                    class="border-2 border-yellow-700 bg-white h-10 pl-2 pr-8 rounded-lg text-sm focus:outline-none"
                     type="rechercher" name="rechercher" placeholder="Rechercher un article" list="datalist-articles"
                     id= "input_recherche" v-on:input="rechercheArticles()" v-on:keyup.enter="redirection_articles()">
                 <datalist id="datalist-articles">
