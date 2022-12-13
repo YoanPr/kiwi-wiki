@@ -6,7 +6,7 @@ const getURLFromTitre = useArticles['methods']['getURLFromTitre']
 async function redirection_articles(){
     const titre = document.getElementById("input_recherche").value
     await getURLFromTitre(titre).then(url => {
-        window.location.href = window.location.protocol + '/' + url;
+        window.location.href = window.location.protocol + url;
         }
     )
 }
@@ -35,21 +35,9 @@ defineProps({
     
         <div class="menu w-full lg:block flex-grow lg:flex lg:items-center lg:w-auto lg:px-3 px-8">
             <div class="text-md font-bold text-yellow-700 lg:flex-grow">
-                <a href="../../index.html"
+                <a href="/"
                    class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-yellow-700 mr-2">
                     Accueil
-                </a>
-                <a href="../../creation.html"
-                   class=" block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-yellow-700 mr-2">
-                    Créer
-                </a>
-                <a href="#"
-                   class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-yellow-700 mr-2">
-                    Modifier
-                </a>
-                <a href="#responsive-header"
-                   class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-yellow-700 mr-2">
-                    Supprimer
                 </a>
             </div>
             <!-- Barre de recherche -->

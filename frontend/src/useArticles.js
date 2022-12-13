@@ -41,7 +41,7 @@ async function getURLFromTitre(titre){
       titre: titre,
     }
   }).then(listeArticles => {
-    if (listeArticles.lenght > 0) { 
+    if (listeArticles.length > 0) { 
       return listeArticles[0].url
     } 
     else {
@@ -49,6 +49,21 @@ async function getURLFromTitre(titre){
     } 
   })
 }
+
+async function getArticleFromURL(url){
+  return app.service('articles').find({
+     query: {
+       url: url,
+     }
+   }).then(listeArticles => {
+    if (listeArticles.length > 0) { 
+      return listeArticles[0]
+    } 
+    else {
+      return null
+    } 
+   })
+ }
  
  // get & display already existing users
  app.service('articles').find({}).then(articlesList => {
@@ -78,14 +93,9 @@ function creationArticle(){
 }
 
  export default {
-
-    data() {
-      return {
-        message: 'Helloo'
-      }
-    },
   
     methods: {
-      creationArticle, getArticles, rechercheArticles, getURLFromTitre
+      creationArticle, getArticles, rechercheArticles, getURLFromTitre,
+      getArticleFromURL
     }
   }
