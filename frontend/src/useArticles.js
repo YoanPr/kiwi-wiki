@@ -65,7 +65,8 @@ app.service('articles').on('created', article => {
 function creationArticle(){
   const urlInput = document.getElementById('urlArticle')
   const titreInput = document.getElementById('titreArticle')
-  const textArticle = document.getElementById('textArticle')
+  const textArticle = document.getElementById("md-editor-v3-textarea")
+
   app.service('articles').create({
     url: urlInput.value,
     titre: titreInput.value,

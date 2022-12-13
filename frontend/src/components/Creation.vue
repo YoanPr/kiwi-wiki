@@ -21,9 +21,5 @@
     import Footer from './Footer.vue'
     import Edition from './Edition.vue'
     import useArticles from '../useArticles.js'
-
-    function creationArticle() {
-        document.getElementById("textArticle").value = document.getElementById("md-editor-v3-textarea").value;
-        useArticles['methods']['creationArticle']
-    }
+    const creationArticle = useArticles['methods']['creationArticle']
 </script>
