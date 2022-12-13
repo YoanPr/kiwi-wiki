@@ -14,9 +14,13 @@
     import NavBar from './NavBar.vue'
     import Footer from './Footer.vue'
     import useArticles from '../useArticles.js'
+
+    const props = defineProps(['paramArticle'])
     const getArticles = useArticles['methods']['getArticles']
-    for (a in getArticles) {
-        console.log(a);
-    }
+    console.log("log", props.paramArticle)
+    const article = props.paramArticle
+    //for (a in getArticles) {
+      //  console.log(a);
+    //}
     function modifierArticle() {}
 </script>
