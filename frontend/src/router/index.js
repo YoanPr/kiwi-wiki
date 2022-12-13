@@ -9,7 +9,7 @@ const routes = [
 
     },
     {
-        path: '/:propriete_url_article+', 
+        path: '/:proprieteUrlArticle+', 
         component: Empty,
         props: true
     }
