@@ -1,5 +1,5 @@
 <template>
-  <md-editor v-model="text" @onChange="onChange" @onSave="onSave" @onUploadImg="onUploadImg" language="en-US"/>
+  <md-editor v-model="text" @onChange="onChange" @onUploadImg="onUploadImg" language="en-US" saveHTMLToTextarea="true"/>
 </template>
 
 <script>
@@ -21,12 +21,6 @@ export default defineComponent({
     onChange(val) {},
     onUploadImg(files) {
       console.log(Array.from(files));
-    },
-    onSave : (v, h) => {
-      console.log(v);
-      h.then((html) => {
-        console.log(html);
-      });
     },
   },
 });
