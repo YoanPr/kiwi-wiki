@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../Home.vue'
-import Empty from '../components/Empty.vue'
+import Home from '../components/Home.vue'
+import Routage_Article from '../components/Routage_Article.vue'
 
 const routes = [
     {
@@ -10,7 +10,7 @@ const routes = [
     },
     {
         path: '/:proprieteUrlArticle+', 
-        component: Empty,
+        component: Routage_Article,
         props: true
     }
 ]
@@ -18,7 +18,7 @@ const routes = [
 // Seule la page d'accueil www.wiki.fr/< Rien après le slash > pointe vers la page d'accueil
 // (component "Home")
 // Tout lien de la forme www.wiki.fr/x/y/z correspond à la création
-// pointera sur la page de gestion d'un article (component "Empty" pour l'instant)
+// pointera sur la page de gestion d'un article (component "Routage_Article" pour l'instant)
 
 const router = createRouter({
     history: createWebHistory(),
