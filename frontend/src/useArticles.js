@@ -78,18 +78,16 @@ app.service('articles').on('created', article => {
 
 // Creation de nouveau article
 function creationArticle(){
-  const urlInput = document.getElementById('urlArticle')
+  const pathname = window.location.pathname
   const titreInput = document.getElementById('titreArticle')
   const textArticle = document.getElementById("md-editor-v3-textarea")
 
   app.service('articles').create({
-    url: urlInput.value,
+    url: pathname,
     titre: titreInput.value,
     texte: textArticle.value,
   })
-  urlInput.value = ''
-  titreInput.value = ''
-  textArticle.value = ''
+  window.location.reload()
 }
 
  export default {

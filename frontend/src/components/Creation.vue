@@ -2,8 +2,8 @@
     <NavBar />
   
     <div class="px-8 container grid place-items-center max-w-3xl mx-auto gap-y-1 bg-orange-200">
-        <h3>Création Article</h3>
-        <input class="mb-3" id="urlArticle" type="text" placeholder="URL article"><br>
+        <h3 class="text-2xl">Création Article</h3>
+        <h4 class="mb-3"> Adresse de l'article : {{url}}</h4>
         <input class="mb-3" id="titreArticle" type="text" placeholder="Titre article"><br>
         <Edition />
         <input class="mb-3" id="textArticle" type="hidden" placeholder="Texte article"><br>
@@ -11,7 +11,6 @@
         id="boutonAjout" type="button" v-on:click="creationArticle">
             Ajouter
         </button>
-        <!-- <button class="mb-4" id="boutonAjout" type="button" v-on:click="creationArticle">Ajouter</button> -->
     </div>
     <Footer />
 </template>
@@ -22,4 +21,5 @@
     import Edition from './Edition.vue'
     import useArticles from '../useArticles.js'
     const creationArticle = useArticles['methods']['creationArticle']
+    const url = window.location.host + window.location.pathname
 </script>
