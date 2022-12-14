@@ -5,7 +5,7 @@
             <h2 class="my-2 text-center text-3xl text-gray-600 font-extrabold mt-3">Liste des articles</h2>
             <ul id="list">
 
-                <table class="table-fixed border-green-800">
+                <table class="table-fixed border-green-800 h-screen">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                         <th class="px-4 py-2 w-52">

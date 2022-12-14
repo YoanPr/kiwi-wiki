@@ -32,7 +32,7 @@ async function redirection_articles(){
         <div class="menu w-full lg:block flex-grow lg:flex lg:items-center lg:w-auto lg:px-3 px-8">
             <div class="text-md font-bold text-white lg:flex-grow">
                 <a href="/"
-                   class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-white mr-2">
+                   class="block mt-4 lg:inline-block lg:mt-0 hover:text-blue-800 px-4 py-2 rounded hover:bg-white mr-2">
                     Accueil
                 </a>
             </div>

@@ -1,7 +1,7 @@
 <template>
     
     <button class="bg-lime-300 hover:bg-blue-400 rounded-full m-2 px-10 py-3" v-on:click="changeMode"> Changer de mode </button>
-    <div v-if="found()">
+    <div class="bg-white" v-if="found()">
         
         <Visualisation  v-if="modeVisualisation" :paramArticle=article>
         

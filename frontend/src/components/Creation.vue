@@ -8,10 +8,9 @@
             <input class="mb-3" id="titreArticle" type="text" placeholder="Titre article" v-bind:value="title"><br>
             <Edition :paramContenuArticle=contenu />
             <input class="mb-3" id="textArticle" type="hidden" placeholder="Texte article"><br>
-            <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
-            id="boutonAjout" type="button" v-on:click="creationArticle(isNew)">
-                Ajouter
-            </button>
+            <div class="p-5 mt-auto place-items-center ">
+                <button type="button" id="boutonAjout" v-on:click="creationArticle(isNew)" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Ajouter</button>      
+            </div>
         </div>
     </div>
     <Footer />
