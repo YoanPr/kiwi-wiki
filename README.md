@@ -1,4 +1,5 @@
-# Le meilleur kiwi du monde ! kiwi ou wiki ? Je ne sais plus. Mais c'est le meilleur ! 
+# Le meilleur kiwi du monde ! kiwi ou wiki ?
+# Je ne sais plus. Mais c'est le meilleur ! 
 
 ## Instalation du backend:
 - cd backend
@@ -10,4 +11,4 @@
 - cd frontend
 - npm install
 - pm run dev
-- npm install vue-router@4 *(pour le Routage)*
+- npm install vue-router@4 *(pour le routage)*
