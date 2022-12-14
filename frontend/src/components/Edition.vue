@@ -4,17 +4,26 @@
 
 <script>
 import { defineComponent } from "vue";
+
 import MdEditor from "md-editor-v3";
 import "md-editor-v3/lib/style.css";
+
+
 
 export default defineComponent({
   name: "Edition",
   components: {
     MdEditor,
   },
+  props: ['paramContenuArticle'],
   data() {
+    console.log(" : ", this.paramContenuArticle)
+    let contenuArticle = ""
+    if(this.paramContenuArticle != null) {
+      contenuArticle = this.paramContenuArticle
+    }
     return {
-      text: "# Editer votre page"
+      text: contenuArticle
     };
   },
   methods: {

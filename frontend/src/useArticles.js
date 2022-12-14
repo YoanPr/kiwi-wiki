@@ -77,7 +77,11 @@ app.service('articles').on('created', article => {
 })
 
 // Creation de nouveau article
-function creationArticle(){
+function creationArticle(isNew){
+  if(isNew)
+    console.log("nouvel article")
+  else
+    modificationArticle()
   const urlInput = document.getElementById('urlArticle')
   const titreInput = document.getElementById('titreArticle')
   const textArticle = document.getElementById('textArticle')
