@@ -4,7 +4,11 @@
     <div class="px-8 container grid place-items-center max-w-3xl mx-auto gap-y-1 bg-orange-200">
         <h3 class="text-2xl">Création Article</h3>
         <h4 class="mb-3"> Adresse de l'article : {{url}}</h4>
+<<<<<<< HEAD
         <input class="mb-3" id="titreArticle" type="text" placeholder="Titre article" v-bind:value="title"  ><br>
+=======
+        <input class="mb-3" id="titreArticle" type="text" placeholder="Titre article"><br>
+>>>>>>> 6a03d9ce8a6fa03b827200a69b53cd1556b0b063
         <Edition :paramContenuArticle=contenu />
         <input class="mb-3" id="textArticle" type="hidden" placeholder="Texte article"><br>
         <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
