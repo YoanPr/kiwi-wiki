@@ -1,8 +1,9 @@
 <template>
     <NavBar />
-  
+
     <div class="px-8 container grid place-items-center max-w-3xl mx-auto gap-y-1 bg-orange-200">
-        <h3 class="text-2xl">Création Article</h3>
+        <p class="text-center my-4">Oups ! Aucun article n'est disponible à cette URL, mais vous pouvez dès maintenant en ajouter un nouveau en utilisant le formulaire ci-dessous ! </p>
+        <h3 class="text-2xl mt-2">Création Article</h3>
         <h4 class="mb-3"> Adresse de l'article : {{url}}</h4>
         <input class="mb-3" id="titreArticle" type="text" placeholder="Titre article"><br>
         <Edition />
