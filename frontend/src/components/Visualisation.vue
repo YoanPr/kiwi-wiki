@@ -1,26 +1,36 @@
 <template>
     <NavBar />
   
-    <div class="container max-w-3xl mx-auto bg-blue-500">
-        <button class="mb-4" id="boutonAjout" type="button" v-on:click="modifierArticle">Modifier</button>
-        <h1 class="font-bold border-b">{{ article.titre  }}</h1>
-        <p class="my-10">{{ article.texte }} </p>
-        <button class="bg-blue-300 hover:bg-blue-400 rounded-full"><a :href="`${article.titre}`">Ouvrir</a></button>
+    <div id="abc">
+        <div class="container max-w-3xl mx-auto bg-blue-500">
+            <p class="font-bold text-3xl border-b">{{ article.titre }}</p>
+            <p v-html="HTMLContent"></p>
+            <button class="bg-blue-300 hover:bg-blue-400 rounded-full" 
+                id="boutonAjout" v-on:click="modifierArticle" type="button">
+                Modifier
+            </button>
+        </div>
     </div>
     <Footer />
+    
 </template>
-  
-<script setup>    
+
+<script>    
     import NavBar from './NavBar.vue'
     import Footer from './Footer.vue'
-    import useArticles from '../useArticles.js'
+    import {marked} from 'marked';
+    import { defineProps } from 'vue';        
 
-    const props = defineProps(['paramArticle'])
-    const getArticles = useArticles['methods']['getArticles']
-    console.log("log", props.paramArticle)
-    const article = props.paramArticle
-    //for (a in getArticles) {
-      //  console.log(a);
-    //}
-    function modifierArticle() {}
+    export default {
+    setup(){
+        const props = defineProps(['paramArticle'])
+        console.log("log", props.paramArticle)
+        const article = props.paramArticle
+    },
+    data(){
+        return {
+            HTMLContent: marked(article.texte)
+        }
+    }
+    }
 </script>

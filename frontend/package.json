@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@feathersjs/client": "^4.5.15",
+    "marked": "^4.2.4",
     "md-editor-v3": "^2.6.0",
     "socket.io-client": "^2.3.0",
     "vue": "^3.2.37",

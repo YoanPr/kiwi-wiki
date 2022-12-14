@@ -11,10 +11,6 @@ async function redirection_articles(){
     )
 }
 
-defineProps({
-  msg: String
-})
-
 </script>
 <template>
  <nav class="flex items-center justify-between flex-wrap bg-lime-300 py-4 lg:px-12 shadow border-solid border-t-2 border-blue-700">
