@@ -36,6 +36,18 @@ async function redirection_articles(){
                     Accueil
                 </a>
             </div>
+            <div class="text-md font-bold text-white lg:flex-grow">
+                <a href="/Demonstration"
+                   class="block mt-4 lg:inline-block lg:mt-0 hover:text-blue-800 px-4 py-2 rounded hover:bg-white mr-2">
+                    Vidéo de démonstration
+                </a>
+            </div>
+            <div class="text-md font-bold text-white lg:flex-grow">
+                <a href="/QuiSommesNous"
+                   class="block mt-4 lg:inline-block lg:mt-0 hover:text-blue-800 px-4 py-2 rounded hover:bg-white mr-2">
+                    Qui-sommes nous?
+                </a>
+            </div>
             <!-- Barre de recherche -->
             <div class="relative mx-auto text-white lg:block hidden">
                 <input
