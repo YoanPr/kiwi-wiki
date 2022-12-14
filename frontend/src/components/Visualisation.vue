@@ -3,7 +3,7 @@
   
     <div id="abc">
         <div class="container max-w-3xl mx-auto bg-blue-500">
-            <p class="font-bold text-3xl border-b">{{ article.titre }}</p>
+            <p class="font-bold text-3xl border-b">{{ paramArticle.titre }}</p>
             <p v-html="HTMLContent"></p>
             <button class="bg-blue-300 hover:bg-blue-400 rounded-full" 
                 id="boutonAjout" v-on:click="modifierArticle" type="button">
@@ -22,14 +22,10 @@
     import { defineProps } from 'vue';        
 
     export default {
-    setup(){
-        const props = defineProps(['paramArticle'])
-        console.log("log", props.paramArticle)
-        const article = props.paramArticle
-    },
+    props : ['paramArticle'],
     data(){
         return {
-            HTMLContent: marked(article.texte)
+            HTMLContent: marked(this.paramArticle.texte)
         }
     }
     }
