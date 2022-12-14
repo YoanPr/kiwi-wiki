@@ -39,7 +39,7 @@ async function redirection_articles(){
             <!-- Barre de recherche -->
             <div class="relative mx-auto text-white lg:block hidden">
                 <input
-                    class="border-2 border-white bg-white h-10 pl-2 pr-8 rounded-lg text-sm focus:outline-none"
+                    class="border-2 border-white bg-white h-10 pl-2 pr-8 rounded-lg text-sm focus:outline-none text-black"
                     type="rechercher" name="rechercher" placeholder="Rechercher un article" list="datalist-articles"
                     id= "input_recherche" v-on:input="rechercheArticles()" v-on:keyup.enter="redirection_articles()">
                 <datalist id="datalist-articles">

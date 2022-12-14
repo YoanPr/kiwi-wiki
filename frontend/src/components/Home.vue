@@ -33,7 +33,7 @@
                         </td>                        
                         <td class="px-4 py-2 text-black font-medium">
                             <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
-                                <a :href="`${article.titre}`">Ouvrir</a>
+                                <a :href="`${article.url}`">Ouvrir</a>
                             </button>
                         </td>
                         </tr>
