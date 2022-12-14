@@ -1,19 +1,48 @@
 <template>
     <NavBar />
-        <div class="px-8 container max-w-2xl mx-auto grid gap-y-1 bg-orange-200">
-            <h2 class="my-2 text-center mt-3">Liste des articles</h2>
+    <div class="bg-indigo-100">
+        <div class="container max-w-2xl mx-auto grid gap-y-1 bg-transparent">
+            <h2 class="my-2 text-center text-3xl text-gray-600 font-extrabold mt-3">Liste des articles</h2>
             <ul id="list">
-                
-                <div class="flex flex-col m-5 space-y-5">
-                        <div class="max-w-2xl  bg-yellow-600 " v-for="article in getArticles">                
-                            <h1 class="font-bold border-b text-center py-2">{{ article.titre  }}</h1>
-                            <p class="my-10">{{ article.texte }} </p>
-                            <button class="bg-blue-300 hover:bg-blue-400 rounded-full"><a :href="`${article.titre}`">Ouvrir</a></button>
-                        </div>
-                    </div>
-            </ul>
 
+                <table class="table-fixed border-green-800">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                        <th class="px-4 py-2 w-52">
+                            Titre
+                        </th>
+                        <th class="px-4 py-2 w-52" >
+                            Contenu
+                        </th>
+                        <th class="px-4 py-2 w-52">
+                            Lien vers l'article
+                        </th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-grey-100 text-center">
+                        <tr
+                        v-for="article in getArticles"
+                        :key="article.titre"
+                        :class="['bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-sm']"
+                        >
+                        <td class="px-4 py-2 text-black font-medium" >
+                        {{ article.titre }}  
+                        </td> 
+                        <td class="px-4 py-2 text-gray-500">
+                        {{ article.texte }}  
+                        </td>                        
+                        <td class="px-4 py-2 text-black font-medium">
+                            <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                                <a :href="`${article.titre}`">Ouvrir</a>
+                            </button>
+                        </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </ul>
         </div>
+    </div>
     <Footer />
 </template>
 <!-- <script src='./useArticles.js' /> -->
