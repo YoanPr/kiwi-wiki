@@ -77,30 +77,35 @@ app.service('articles').on('created', article => {
 })
 
 // Creation de nouveau article
-function creationArticle(){
+async function creationArticle(isNew){
   const pathname = window.location.pathname
   const titreInput = document.getElementById('titreArticle')
   const textArticle = document.getElementById("md-editor-v3-textarea")
 
-  app.service('articles').create({
-    url: pathname,
-    titre: titreInput.value,
-    texte: textArticle.value,
-  })
+  if(isNew) {
+    app.service('articles').create({
+      url: pathname,
+      titre: titreInput.value,
+      texte: textArticle.value,
+    })
+    console.log("un nouvel article")
+  }
+  else {
+    modificationArticle(titreInput.value, textArticle.value)
+  }
   window.location.reload()
 }
 
 // Creation de nouveau article
-async function modificationArticle(){
-  idArticle = await getArticleFromURL(window.location.pathname).id
-  const titreInput = document.getElementById('titreArticle')
-  const textArticle = document.getElementById("md-editor-v3-textarea")
-
+async function modificationArticle(titreInput, textArticle){
+  const article = await getArticleFromURL(window.location.pathname)
+  const idArticle = article['id']
+  
   app.service('articles').patch(idArticle, {
-    titre: titreInput.value,
-    texte: textArticle.value,
+    titre: titreInput,
+    texte: textArticle,
   })
-  window.location.reload()
+ 
 }
 
  export default {

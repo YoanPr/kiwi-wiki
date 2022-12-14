@@ -12,9 +12,14 @@ export default defineComponent({
   components: {
     MdEditor,
   },
+  props: ['paramContenuArticle'],
   data() {
+    let contenuArticle = ""
+    if(this.paramContenuArticle != null) {
+      contenuArticle = this.paramContenuArticle
+    }
     return {
-      text: "# Editer votre page"
+      text: contenuArticle
     };
   },
   methods: {
