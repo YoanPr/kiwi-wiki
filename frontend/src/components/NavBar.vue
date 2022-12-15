@@ -45,7 +45,7 @@ async function redirection_articles(){
             <div class="text-md font-bold text-white lg:flex-grow">
                 <a href="/about"
                    class="block mt-4 lg:inline-block lg:mt-0 hover:text-blue-800 px-4 py-2 rounded hover:bg-white mr-2">
-                    Qui-sommes nous?
+                    Qui sommes-nous?
                 </a>
             </div>
             <!-- Barre de recherche -->
