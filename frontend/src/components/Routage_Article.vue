@@ -23,10 +23,15 @@
     import useArticles from '../useArticles.js'
     import Footer from './Footer.vue'
     import {ref} from 'vue'
+    import { useRouter, useRoute } from 'vue-router'
 
     const getArticleFromURL = useArticles['methods']['getArticleFromURL']
 
-    const article = await getArticleFromURL(window.location.pathname)
+    const route = useRoute()
+    const param = route.params['proprieteUrlArticle']
+    const url = "/" + param.join('/')
+
+    const article = await getArticleFromURL(url)
 
     let modeVisualisation = ref(true)
     function changeMode() {

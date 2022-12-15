@@ -4,7 +4,7 @@ import { reactive, computed } from 'vue'
 
 
 const data = reactive({
-  articles : []
+  articles : {}
 })
 
 let compteur = 0 // Logs
@@ -15,7 +15,9 @@ const getArticles = computed(() => {
 })
 
 function addArticleElement(article) {
-    data.articles.push(article)
+    const objetArticle = {'url' : article.url, 'titre': article.titre, 'texte': article.texte}
+    data.articles[article.id] = objetArticle
+    
 }
 
 async function rechercheArticles(){
@@ -87,33 +89,38 @@ function abonnementMajArticle() {
 }
 
 // Creation de nouveau article
-async function creationArticle(isNew){
-  const pathname = window.location.pathname
+async function creationArticle(url, isNew){
+  console.log("url de article", url)
   const titreInput = document.getElementById('titreArticle')
   const textArticle = document.getElementById("md-editor-v3-textarea")
 
   if(isNew) {
     app.service('articles').create({
-      url: pathname,
+      url: url,
       titre: titreInput.value,
       texte: textArticle.value,
     })
     console.log("un nouvel article")
   }
   else {
-    await modificationArticle(titreInput.value, textArticle.value);
+    await modificationArticle(url, titreInput.value, textArticle.value);
   }
   window.location.reload()
 }
 
 // Modification d'un article
-async function modificationArticle(titreInput, textArticle){
-  const article = await getArticleFromURL(window.location.pathname)
+async function modificationArticle(url, titreInput, textArticle){
+  const article = await getArticleFromURL(url)
   const idArticle = article['id']
+  console.log("allo")
+  console.log("idArticle", idArticle)
   app.service('articles').patch(idArticle, {
     titre: titreInput,
     texte: textArticle,
   })
+  // Mise à jour observable
+  const objetArticle = {'titre': titreInput, 'texte': textArticle}
+  data.articles[idArticle] = objetArticle
  
 }
 
