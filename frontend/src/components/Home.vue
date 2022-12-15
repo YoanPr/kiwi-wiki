@@ -31,7 +31,7 @@
                             <div v-else>{{ article.texte.substring(0,50)+"..." }}</div>
                         </td>                        
                         <td class="px-4 py-2 text-black font-medium">
-                            <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                            <button class="bg-white  py-2 px-4 font-semibold  border border-gray-400 rounded shadow">
                                 <a :href="`${article.url}`">Ouvrir</a>
                             </button>
                         </td>
@@ -49,6 +49,5 @@
     import NavBar from './NavBar.vue'
     import Footer from './Footer.vue'
     import useArticles from '../useArticles.js'
-    const creationArticle = useArticles['methods']['creationArticle']
     const getArticles = useArticles['methods']['getArticles']
 </script>
