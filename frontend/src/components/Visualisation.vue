@@ -3,8 +3,8 @@
     <NavBar />
   
     <div class="container flex flex-col p-5 max-w-3xl mx-auto bg-indigo-100">
-        <p class="font-bold text-5xl py-5 pl-5 border-b">{{ paramArticle.titre }}</p>
-        <p v-html="HTMLContent" class="py-5 pl-5"></p>
+        <p v-bind:id="'titre-' + paramArticle.id" class="font-bold text-5xl py-5 pl-5 border-b">{{ paramArticle.titre }}</p>
+        <p v-html="HTMLContent" v-bind:id="'texte-marked-' + paramArticle.id" class="py-5 pl-5"></p>
     </div>
     </div>
 </template>

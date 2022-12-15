@@ -1,6 +1,6 @@
 import app from './connexion_socket'
 import { reactive, computed } from 'vue'
-
+import {marked} from 'marked';
 
 
 const data = reactive({
@@ -78,15 +78,19 @@ app.service('articles').on('created', article => {
   addArticleElement(article)
 })
 
-function abonnementMajArticle() {
-  app.service('articles').on('patched', article => {
-    console.log('PATCHED', article)
-    const titre = document.getElementById('titre-' + article.id)
-    const texte = document.getElementById('texte-' + article.id)
-    titre.innerHTML = article.titre
+app.service('articles').on('patched', article => {
+  console.log('PATCHED', article)
+  const titre = document.getElementById('titre-' + article.id)
+  const texte = document.getElementById('texte-' + article.id)
+  const texteMarked = document.getElementById('texte-marked-' + article.id)
+  titre.innerHTML = article.titre
+  if (texte !== null){
     texte.innerHTML = article.texte
-  })
-}
+  }
+  if (texteMarked !== null){
+    texteMarked.innerHTML = marked(article.texte)
+  }
+})
 
 // Creation de nouveau article
 async function creationArticle(url, isNew){
@@ -128,6 +132,6 @@ async function modificationArticle(url, titreInput, textArticle){
   
     methods: {
       creationArticle, getArticles, rechercheArticles, getURLFromTitre,
-      getArticleFromURL, modificationArticle, abonnementMajArticle
+      getArticleFromURL, modificationArticle
     }
   }

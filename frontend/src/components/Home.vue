@@ -54,6 +54,4 @@
     import useArticles from '../useArticles.js'
     const creationArticle = useArticles['methods']['creationArticle']
     const getArticles = useArticles['methods']['getArticles']
-    const majArticles = useArticles['methods']['abonnementMajArticle']
-    majArticles()
 </script>
