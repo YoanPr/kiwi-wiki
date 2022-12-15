@@ -15,7 +15,7 @@ const getArticles = computed(() => {
 })
 
 function addArticleElement(article) {
-    const objetArticle = {'url' : article.url, 'titre': article.titre, 'texte': article.texte}
+    const objetArticle = {'id' : article.id, 'url' : article.url, 'titre': article.titre, 'texte': article.texte}
     data.articles[article.id] = objetArticle
     
 }
