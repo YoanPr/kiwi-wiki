@@ -25,10 +25,10 @@
                         :key="article.titre"
                         :class="['bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-sm']"
                         >
-                        <td class="px-4 py-2 text-black font-medium" >
+                        <td class="px-4 py-2 text-black font-medium" v-bind:id="'titre-' + article.id">
                         {{ article.titre }}  
                         </td> 
-                        <td class="px-4 py-2 text-gray-500">
+                        <td class="px-4 py-2 text-gray-500" v-bind:id="'texte-' + article.id">
                         {{ article.texte }}  
                         </td>                        
                         <td class="px-4 py-2 text-black font-medium">
@@ -53,4 +53,6 @@
     import useArticles from '../useArticles.js'
     const creationArticle = useArticles['methods']['creationArticle']
     const getArticles = useArticles['methods']['getArticles']
+    const majArticles = useArticles['methods']['abonnementMajArticle']
+    majArticles()
 </script>

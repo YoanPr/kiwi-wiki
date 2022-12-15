@@ -76,6 +76,16 @@ app.service('articles').on('created', article => {
   addArticleElement(article)
 })
 
+function abonnementMajArticle() {
+  app.service('articles').on('patched', article => {
+    console.log('PATCHED', article)
+    const titre = document.getElementById('titre-' + article.id)
+    const texte = document.getElementById('texte-' + article.id)
+    titre.innerHTML = article.titre
+    texte.innerHTML = article.texte
+  })
+}
+
 // Creation de nouveau article
 async function creationArticle(isNew){
   const pathname = window.location.pathname
@@ -111,6 +121,6 @@ async function modificationArticle(titreInput, textArticle){
   
     methods: {
       creationArticle, getArticles, rechercheArticles, getURLFromTitre,
-      getArticleFromURL, modificationArticle
+      getArticleFromURL, modificationArticle, abonnementMajArticle
     }
   }
