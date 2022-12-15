@@ -1,11 +1,9 @@
 <template>
     <NavBar />
     <div class="bg-indigo-100">
-        <div class="container max-w-2xl mx-auto grid gap-y-1 bg-transparent">
-            <h2 class="my-2 text-center text-3xl text-gray-600 font-extrabold mt-3">Liste des articles</h2>
-            <ul id="list">
-
-                <table class="table-fixed border-black h-screen">
+        <div class="container mx-auto grid gap-y-1 bg-transparent w-4/6">
+            <h2 class="my-2 text-center text-3xl py-5 text-gray-800 font-extrabold mt-3">Liste des articles</h2>
+                <table class="table-fixed border-black h-screen flex-1">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                         <tr>
                         <th class="px-4 py-2 w-52">
@@ -23,7 +21,7 @@
                         <tr
                         v-for="article in getArticles"
                         :key="article.titre"
-                        :class="['bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-sm']"
+                        :class="['bg-white border-b text-sm']"
                         >
                         <td class="px-4 py-2 text-black font-medium" v-bind:id="'titre-' + article.id">
                         {{ article.titre }}  
@@ -41,7 +39,6 @@
                     </tbody>
                 </table>
 
-            </ul>
         </div>
     </div>
     <Footer />
