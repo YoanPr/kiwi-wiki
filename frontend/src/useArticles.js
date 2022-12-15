@@ -83,7 +83,9 @@ app.service('articles').on('patched', article => {
   const titre = document.getElementById('titre-' + article.id)
   const texte = document.getElementById('texte-' + article.id)
   const texteMarked = document.getElementById('texte-marked-' + article.id)
-  titre.innerHTML = article.titre
+  if (titre !== null){
+    titre.innerHTML = article.titre
+  }
   if (texte !== null){
     texte.innerHTML = article.texte
   }
