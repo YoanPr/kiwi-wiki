@@ -11,6 +11,7 @@
             <div class="container grid place-items-center max-w-3xl mx-auto gap-y-1 bg-indigo-100">
                 <div class="p-5 mt-auto place-items-center ">
                 <button type="button" v-on:click="changeMode" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Edition</button>
+                <button type="button" v-on:click="downloadArticle()" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Télécharger article</button>
             </div>
             </div>
         </div>
@@ -56,4 +57,12 @@ import { getMemoedVNodeCall } from '@vue/compiler-core'
        return article !== null;
     }
 
+    function downloadArticle () {
+        let w = window.open()
+        w.document.write(article.texte)
+        w.document.close()
+        w.setTimeout(function () {
+        w.print()
+        }, 1000)
+    }
 </script>
