@@ -65,7 +65,7 @@ async function getArticleFromURL(url){
    })
  }
  
- // get & display already existing users
+ // get & display already existing articles
  app.service('articles').find({}).then(articlesList => {
     articlesList.forEach(article => addArticleElement(article)) 
  })
