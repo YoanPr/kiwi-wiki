@@ -1,5 +1,5 @@
 <template>
-  <md-editor v-model="text" @onChange="onChange" @onUploadImg="onUploadImg" language="en-US" saveHTMLToTextarea="true"/>
+  <md-editor v-model="text" @onChange="onChange" @onUploadImg="onUploadImg" language="en-US" saveHTMLToTextarea="true" />
 </template>
 
 <script>
