@@ -10,5 +10,4 @@
 ## Instalation du frontend
 - cd frontend
 - npm install
-- pm run dev
-- npm install vue-router@4 *(pour le routage)*
+- npm run dev
