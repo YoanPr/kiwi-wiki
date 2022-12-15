@@ -130,10 +130,17 @@ async function modificationArticle(url, titreInput, textArticle){
  
 }
 
+// Suppression d'un article
+async function suppressionArticle(id){
+  app.service('articles').remove(id)
+  console.log("Article supprimé")
+  window.location.reload(true)
+}
+
  export default {
   
     methods: {
       creationArticle, getArticles, rechercheArticles, getURLFromTitre,
-      getArticleFromURL, modificationArticle
+      getArticleFromURL, modificationArticle, suppressionArticle
     }
   }
