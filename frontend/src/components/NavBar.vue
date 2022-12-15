@@ -13,7 +13,7 @@ async function redirection_articles(){
 
 </script>
 <template>
- <nav class="flex items-center justify-between flex-wrap bg-sky-900 py-4 lg:px-12 shadow border-solid border-t-2 border-blue-700">
+ <nav class="flex items-center justify-between flex-wrap bg-sky-900 py-2 lg:px-12 shadow border-solid border-t-2 border-blue-700">
         <div class="flex justify-between lg:w-auto w-full lg:border-b-0 pl-6 pr-2 border-solid border-b-2 border-gray-300 pb-5 lg:pb-0">
             <div class="flex items-center flex-shrink-0 text-gray-800 mr-16">
                 <img src ="../../public/kiwi.png" class="h-16 self-center">
