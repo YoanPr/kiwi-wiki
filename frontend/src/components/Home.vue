@@ -5,14 +5,14 @@
             <h2 class="my-2 text-center text-3xl text-gray-600 font-extrabold mt-3">Liste des articles</h2>
             <ul id="list">
 
-                <table class="table-fixed border-green-800 h-screen">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <table class="table-fixed border-black h-screen">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                         <tr>
                         <th class="px-4 py-2 w-52">
                             Titre
                         </th>
                         <th class="px-4 py-2 w-52" >
-                            Contenu
+                            Aperçu
                         </th>
                         <th class="px-4 py-2 w-52">
                             Lien vers l'article
@@ -29,7 +29,8 @@
                         {{ article.titre }}  
                         </td> 
                         <td class="px-4 py-2 text-gray-500" v-bind:id="'texte-' + article.id">
-                        {{ article.texte }}  
+                            <div v-if="article.texte.length<50">{{ article.texte }}</div>
+                            <div v-else>{{ article.texte.substring(0,50)+"..." }}</div>
                         </td>                        
                         <td class="px-4 py-2 text-black font-medium">
                             <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
