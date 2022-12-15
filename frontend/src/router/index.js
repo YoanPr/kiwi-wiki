@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../components/Home.vue'
+import Demonstration from '../components/Demonstration.vue'
+import QuiSommesNous from '../components/QuiSommesNous.vue'
 import Routage_Article from '../components/Routage_Article.vue'
 
 const routes = [
@@ -7,6 +9,15 @@ const routes = [
         path: '/',
         component: Home,
 
+    },
+    {
+        path: '/about',
+        component: QuiSommesNous,
+        
+    },
+    {
+        path: '/livrables/video',
+        component: Demonstration,
     },
     {
         path: '/:proprieteUrlArticle+', 
