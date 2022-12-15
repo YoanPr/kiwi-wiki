@@ -91,16 +91,15 @@ async function creationArticle(isNew){
     console.log("un nouvel article")
   }
   else {
-    modificationArticle(titreInput.value, textArticle.value)
+    await modificationArticle(titreInput.value, textArticle.value);
   }
   window.location.reload()
 }
 
-// Creation de nouveau article
+// Modification d'un article
 async function modificationArticle(titreInput, textArticle){
   const article = await getArticleFromURL(window.location.pathname)
   const idArticle = article['id']
-  
   app.service('articles').patch(idArticle, {
     titre: titreInput,
     texte: textArticle,
